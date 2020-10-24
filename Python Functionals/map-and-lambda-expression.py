@@ -1,10 +1,15 @@
-def main():
-    N = int(input())
-    fibonacci = []
-    for i in range(N):
-        fibonacci.append(i if i < 2 else fibonacci[i - 2] + fibonacci[i - 1])
-    
-    print(list(map(lambda x: x ** 3, fibonacci)))
-    
+cube = lambda x: x ** 3
+
+
+def fibonacci(n):
+    List = [0, 1]
+    for i in range(2, n):
+        List.append(List[i-1] + List[i-2])
+        
+    return(List[0:n])
+
+
+
 if __name__ == '__main__':
-    main()
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
